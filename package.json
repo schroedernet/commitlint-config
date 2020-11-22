@@ -3,8 +3,19 @@
   "version": "0.0.0",
   "description": "Opinionated configuration for commitlint",
   "main": "src/commitlint.config.js",
-  "repository": "https://gitlab.com/schroedernet/commitlint-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/schroedernet/commitlint-config.git"
+  },
+  "keywords": [
+    "commitlint",
+    "commitlint-config"
+  ],
   "author": "John Schroeder <john@schroedernet.software>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/schroedernet/commitlint-config/issues"
+  },
+  "homepage": "https://gitlab.com/schroedernet/commitlint-config#readme",
   "private": false
 }
