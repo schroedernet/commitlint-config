@@ -1,0 +1,10 @@
+{
+  "name": "@schroedernet/commitlint-config",
+  "version": "0.0.0",
+  "description": "Opinionated configuration for commitlint",
+  "main": "src/commitlint.config.js",
+  "repository": "https://gitlab.com/schroedernet/commitlint-config",
+  "author": "John Schroeder <john@schroedernet.software>",
+  "license": "MIT",
+  "private": false
+}
