@@ -1,0 +1,17 @@
+lint:
+  before_script:
+    - 'apk update'
+    - 'apk upgrade'
+    - 'apk add git nodejs-current npm shellcheck'
+    - 'npm install --global yarn'
+    - 'yarn install --frozen-lockfile'
+
+  image: 'alpine:latest'
+
+  script:
+    - 'yarn run lint'
+
+  stage: 'lint'
+
+stages:
+  - 'lint'
