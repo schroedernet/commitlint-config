@@ -20,13 +20,19 @@
   "private": false,
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
+    "ajv-cli": "^3.3.0",
     "husky": "^4.3.0"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^11.0.0"
   },
   "scripts": {
-    "lint": "commitlint --from 793f2a0e8c6a200ec0aebfa3c4d71367fc7a77b1"
+    "lint": "yarn run lint-ajv && yarn run lint-commitlint",
+    "lint-ajv": "yarn run lint-ajv-package",
+    "lint-ajv-package": "ajv -s tmp/lint/schemas/package.json -d package.json",
+    "lint-commitlint": "commitlint --from 793f2a0e8c6a200ec0aebfa3c4d71367fc7a77b1",
+    "prelint-ajv": "mkdir -p tmp/lint/schemas",
+    "prelint-ajv-package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package"
   },
   "husky": {
     "hooks": {
