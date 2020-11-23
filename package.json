@@ -18,7 +18,19 @@
   },
   "homepage": "https://gitlab.com/schroedernet/commitlint-config#readme",
   "private": false,
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "husky": "^4.3.0"
+  },
   "dependencies": {
     "@commitlint/config-conventional": "^11.0.0"
+  },
+  "scripts": {
+    "lint": "commitlint --from 793f2a0e8c6a200ec0aebfa3c4d71367fc7a77b1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
