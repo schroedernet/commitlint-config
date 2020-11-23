@@ -28,10 +28,12 @@
   },
   "scripts": {
     "lint": "yarn run lint-ajv && yarn run lint-commitlint",
-    "lint-ajv": "yarn run lint-ajv-package",
+    "lint-ajv": "yarn run lint-ajv-gitlab-ci && yarn run lint-ajv-package",
+    "lint-ajv-gitlab-ci": "ajv -s tmp/lint/schemas/gitlab-ci.json -d .gitlab-ci.yml",
     "lint-ajv-package": "ajv -s tmp/lint/schemas/package.json -d package.json",
     "lint-commitlint": "commitlint --from 793f2a0e8c6a200ec0aebfa3c4d71367fc7a77b1",
     "prelint-ajv": "mkdir -p tmp/lint/schemas",
+    "prelint-ajv-gitlab-ci": "test -f tmp/lint/schemas/gitlab-ci.json || wget -O tmp/lint/schemas/gitlab-ci.json https://json.schemastore.org/gitlab-ci",
     "prelint-ajv-package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package"
   },
   "husky": {
