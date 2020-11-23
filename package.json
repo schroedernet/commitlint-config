@@ -17,5 +17,8 @@
     "url": "https://gitlab.com/schroedernet/commitlint-config/issues"
   },
   "homepage": "https://gitlab.com/schroedernet/commitlint-config#readme",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@commitlint/config-conventional": "^11.0.0"
+  }
 }
