@@ -2,7 +2,7 @@
   "name": "@schroedernet/commitlint-config",
   "version": "0.0.0",
   "description": "Opinionated configuration for commitlint",
-  "main": "src/commitlint.config.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://gitlab.com/schroedernet/commitlint-config.git"
@@ -20,21 +20,33 @@
   "private": false,
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
+    "@commitlint/types": "^11.0.0",
+    "@tsconfig/node12": "^1.0.7",
     "ajv-cli": "^3.3.0",
-    "husky": "^4.3.0"
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
   },
   "dependencies": {
     "@commitlint/config-conventional": "^11.0.0"
   },
   "scripts": {
-    "lint": "yarn run lint-ajv && yarn run lint-commitlint",
-    "lint-ajv": "yarn run lint-ajv-gitlab-ci && yarn run lint-ajv-package",
+    "build": "tsc",
+    "dev": "jest --notify --watch",
+    "lint": "yarn run lint-ajv && yarn run lint-commitlint && yarn run lint-tsc",
+    "lint-ajv": "yarn run lint-ajv-commitlintrc && yarn run lint-ajv-gitlab-ci && yarn run lint-ajv-package",
+    "lint-ajv-commitlintrc": "ajv -s tmp/lint/schemas/commitlintrc.json -d .commitlintrc.yml",
     "lint-ajv-gitlab-ci": "ajv -s tmp/lint/schemas/gitlab-ci.json -d .gitlab-ci.yml",
     "lint-ajv-package": "ajv -s tmp/lint/schemas/package.json -d package.json",
     "lint-commitlint": "commitlint --from 793f2a0e8c6a200ec0aebfa3c4d71367fc7a77b1",
+    "lint-tsc": "tsc --noEmit",
     "prelint-ajv": "mkdir -p tmp/lint/schemas",
+    "prelint-ajv-commitlintrc": "test -f tmp/lint/schemas/commitlintrc.json || wget -O tmp/lint/schemas/commitlintrc.json https://json.schemastore.org/commitlintrc",
     "prelint-ajv-gitlab-ci": "test -f tmp/lint/schemas/gitlab-ci.json || wget -O tmp/lint/schemas/gitlab-ci.json https://json.schemastore.org/gitlab-ci",
-    "prelint-ajv-package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package"
+    "prelint-ajv-package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package",
+    "test": "jest"
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,8 @@
+// https://aka.ms/tsconfig.json
+{
+  "extends": "@tsconfig/node12/tsconfig.json",
+
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}

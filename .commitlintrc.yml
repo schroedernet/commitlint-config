@@ -1,0 +1,42 @@
+$schema: 'https://json.schemastore.org/commitlintrc'
+
+extends:
+  - '@commitlint/config-conventional'
+
+rules:
+  body-case:              [2, 'always', 'sentence-case'                        ]
+  body-empty:             [0, 'never', null                                    ]
+  body-leading-blank:     [2, 'always', null                                   ]
+  body-max-length:        [2, 'always', .inf                                   ]
+  body-max-line-length:   [2, 'always', 72                                     ]
+  body-min-length:        [2, 'always', 0                                      ]
+  footer-empty:           [0, 'never', null                                    ]
+  footer-leading-blank:   [2, 'always', null                                   ]
+  footer-max-length:      [2, 'always', .inf                                   ]
+  footer-max-line-length: [2, 'always', 72                                     ]
+  footer-min-length:      [2, 'always', 0                                      ]
+  header-case:            [0, 'always', 'lower-case'                           ]
+  header-full-stop:       [2, 'never', null                                    ]
+  header-max-length:      [2, 'always', 72                                     ]
+  header-min-length:      [2, 'always', 0                                      ]
+  references-empty:       [0, 'never', null                                    ]
+  scope-case:             [2, 'always', 'lower-case'                           ]
+  scope-empty:            [2, 'never', null                                    ]
+  scope-enum:             [2, 'always', ['config', 'contrib', 'deps',
+                                         'license', 'lint', 'package',
+                                         'readme']                             ]
+  scope-max-length:       [2, 'always', .inf                                   ]
+  scope-min-length:       [2, 'always', 0                                      ]
+  signed-off-by:          [0, 'never', null                                    ]
+  subject-case:           [2, 'always', 'sentence-case'                        ]
+  subject-empty:          [2, 'never', null                                    ]
+  subject-full-stop:      [2, 'never', null                                    ]
+  subject-max-length:     [2, 'always', 50                                     ]
+  subject-min-length:     [2, 'always', 0                                      ]
+  type-case:              [2, 'always', 'lower-case'                           ]
+  type-empty:             [2, 'never', null                                    ]
+  type-enum:              [2, 'always', ['build', 'ci', 'chore', 'docs',
+                                         'feat', 'fix', 'perf', 'refactor',
+                                         'revert', 'style', 'test']            ]
+  type-max-length:        [2, 'always', .inf                                   ]
+  type-min-length:        [2, 'always', 0                                      ]

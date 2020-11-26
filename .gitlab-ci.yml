@@ -1,4 +1,4 @@
-lint:
+default:
   before_script:
     - 'apk update'
     - 'apk upgrade'
@@ -8,6 +8,7 @@ lint:
 
   image: 'alpine:latest'
 
+lint:
   script:
     - 'yarn run lint'
 
@@ -15,3 +16,12 @@ lint:
 
 stages:
   - 'lint'
+  - 'test'
+
+test:
+  coverage: '/All files.*\s+(\d+)\s+\|.*$/'
+
+  script:
+    - 'yarn run test'
+
+  stage: 'test'
