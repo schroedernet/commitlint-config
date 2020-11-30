@@ -24,7 +24,7 @@ rules:
   scope-empty:            [2, 'never', null                                    ]
   scope-enum:             [2, 'always', ['config', 'contrib', 'deps',
                                          'license', 'lint', 'package',
-                                         'readme']                             ]
+                                         'readme', 'test']                     ]
   scope-max-length:       [2, 'always', .inf                                   ]
   scope-min-length:       [2, 'always', 0                                      ]
   signed-off-by:          [0, 'never', null                                    ]
