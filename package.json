@@ -47,11 +47,15 @@
     "prelint-ajv-commitlintrc": "test -f tmp/lint/schemas/commitlintrc.json || wget -O tmp/lint/schemas/commitlintrc.json https://json.schemastore.org/commitlintrc",
     "prelint-ajv-gitlab-ci": "test -f tmp/lint/schemas/gitlab-ci.json || wget -O tmp/lint/schemas/gitlab-ci.json https://json.schemastore.org/gitlab-ci",
     "prelint-ajv-package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package",
+    "prepack": "yarn build",
     "test": "jest"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  }
+  },
+  "files": [
+    "/dist/"
+  ]
 }

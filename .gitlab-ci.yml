@@ -14,9 +14,20 @@ lint:
 
   stage: 'lint'
 
+pack:
+  artifacts:
+    paths:
+      - 'schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz'
+
+  script:
+    - 'yarn pack --filename "schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz"'
+
+  stage: 'pack'
+
 stages:
   - 'lint'
   - 'test'
+  - 'pack'
 
 test:
   artifacts:

@@ -1,8 +1,10 @@
 // https://aka.ms/tsconfig.json
 {
+  "exclude": ["jest.config.ts", "**/*.test.ts"],
   "extends": "@tsconfig/node12/tsconfig.json",
 
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "rootDir" :"src"
   }
 }
