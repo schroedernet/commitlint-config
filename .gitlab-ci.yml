@@ -19,6 +19,13 @@ stages:
   - 'test'
 
 test:
+  artifacts:
+    reports:
+      cobertura: 'tmp/test/reports/coverage/cobertura-coverage.xml'
+      junit: 'tmp/test/reports/unit/junit.xml'
+
+    when: 'always'
+
   coverage: '/All files.*\s+(\d+)\s+\|.*$/'
 
   script:
