@@ -7,7 +7,9 @@ default:
     - 'yarn install --cache-folder .yarn-cache --frozen-lockfile --prefer-offline'
 
   cache:
-    key: '${CI_COMMIT_REF_SLUG}'
+    key:
+      files:
+        - 'yarn.lock'
 
     paths:
       - '.npm-cache'

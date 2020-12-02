@@ -22,7 +22,7 @@ rules:
   references-empty:       [0, 'never', null                                    ]
   scope-case:             [2, 'always', 'lower-case'                           ]
   scope-empty:            [2, 'never', null                                    ]
-  scope-enum:             [2, 'always', ['config', 'contrib', 'deps',
+  scope-enum:             [2, 'always', ['cache', 'config', 'contrib', 'deps',
                                          'license', 'lint', 'package',
                                          'readme', 'test']                     ]
   scope-max-length:       [2, 'always', .inf                                   ]
