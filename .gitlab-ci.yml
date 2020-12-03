@@ -1,9 +1,5 @@
 default:
   before_script:
-    - 'apk update'
-    - 'apk upgrade'
-    - 'apk add git nodejs-current npm shellcheck'
-    - 'npm install --cache .npm-cache --global --prefer-offline yarn'
     - 'yarn install --cache-folder .yarn-cache --frozen-lockfile --prefer-offline'
 
   cache:
@@ -12,10 +8,9 @@ default:
         - 'yarn.lock'
 
     paths:
-      - '.npm-cache'
       - '.yarn-cache'
 
-  image: 'alpine:latest'
+  image: 'node:latest'
 
 lint:
   script:
