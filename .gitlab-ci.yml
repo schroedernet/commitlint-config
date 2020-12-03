@@ -13,6 +13,8 @@ default:
   image: 'node:latest'
 
 lint:
+  needs: []
+
   script:
     - 'yarn run lint'
 
@@ -22,6 +24,8 @@ pack:
   artifacts:
     paths:
       - 'schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz'
+
+  needs: []
 
   script:
     - 'yarn pack --filename "schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz"'
@@ -42,6 +46,8 @@ test:
     when: 'always'
 
   coverage: '/All files.*\s+(\d+)\s+\|.*$/'
+
+  needs: []
 
   script:
     - 'yarn run test --ci'
