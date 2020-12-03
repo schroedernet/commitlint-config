@@ -9,6 +9,7 @@ default:
 
     paths:
       - '.yarn-cache'
+      - 'tmp/lint/schemas'
 
   image: 'node:latest'
 
