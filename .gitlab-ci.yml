@@ -33,10 +33,25 @@ pack:
 
   stage: 'pack'
 
+release:
+  only:
+    - 'alpha'
+    - 'beta'
+    - 'master'
+    - 'next'
+    - 'next-major'
+
+  script:
+    - 'echo "unsafe-perm = true" >> .npmrc'
+    - 'yarn run semantic-release --repository-url "${CI_PROJECT_URL}.git"'
+
+  stage: 'release'
+
 stages:
   - 'lint'
   - 'test'
   - 'pack'
+  - 'release'
 
 test:
   artifacts:
