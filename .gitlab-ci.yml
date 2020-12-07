@@ -38,7 +38,7 @@ release:
     - 'alpha'
 
   script:
-    - 'yarn run semantic-release'
+    - 'yarn run semantic-release --repository-url "${CI_PROJECT_URL}.git"'
 
   stage: 'release'
 
