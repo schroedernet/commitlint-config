@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.0.0-alpha.5](https://gitlab.schroedernet.software/schroedernet/commitlint-config/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2020-12-07)
+
+
+### Bug Fixes
+
+* **release:** Fix release ([93fa08b](https://gitlab.schroedernet.software/schroedernet/commitlint-config/commit/93fa08b9167723b6650f67297e306fe064057135))
+
 # [1.0.0-alpha.4](https://gitlab.schroedernet.software/schroedernet/commitlint-config/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2020-12-07)
 
 
