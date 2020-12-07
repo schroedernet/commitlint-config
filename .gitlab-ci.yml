@@ -33,10 +33,20 @@ pack:
 
   stage: 'pack'
 
+release:
+  only:
+    - 'alpha'
+
+  script:
+    - 'yarn run semantic-release'
+
+  stage: 'release'
+
 stages:
   - 'lint'
   - 'test'
   - 'pack'
+  - 'release'
 
 test:
   artifacts:
