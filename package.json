@@ -68,6 +68,5 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "foo": "1"
+  }
 }

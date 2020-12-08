@@ -36,6 +36,10 @@ pack:
 release:
   only:
     - 'alpha'
+    - 'beta'
+    - 'master'
+    - 'next'
+    - 'next-major'
 
   script:
     - 'yarn run semantic-release --repository-url "${CI_PROJECT_URL}.git"'
