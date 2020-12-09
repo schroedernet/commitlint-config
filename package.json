@@ -56,6 +56,7 @@
     "prelint:ajv:package": "test -f tmp/lint/schemas/package.json || wget -O tmp/lint/schemas/package.json https://json.schemastore.org/package",
     "prelint:ajv:tsconfig": "(test -f tmp/lint/schemas/tsconfig.json || wget -O tmp/lint/schemas/tsconfig.json https://json.schemastore.org/tsconfig) && json5 --out-file tmp/lint/work/tsconfig.json tsconfig.json",
     "prepack": "yarn build",
+    "prepublishOnly": "yarn run prepack",
     "test": "jest"
   },
   "husky": {
