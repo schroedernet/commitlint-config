@@ -8,6 +8,8 @@
 
 const {execFileSync} = require('child_process')
 
+const {homepage} = require('./package.json')
+
 
 const plugins = [[
   '@semantic-release/commit-analyzer',
@@ -18,6 +20,14 @@ const plugins = [[
 ], [
   '@semantic-release/changelog', {
     changelogTitle: '# Changelog',
+  },
+], [
+  '@google/semantic-release-replace-plugin', {
+    replacements: [{
+      files:  ['CHANGELOG.md'],
+      from: '${env.CI_PROJECT_URL}',
+      to: `${homepage.replace('#readme', '')}`,
+    }],
   },
 ]]
 
