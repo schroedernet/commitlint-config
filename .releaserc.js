@@ -25,7 +25,7 @@ const plugins = [[
   '@google/semantic-release-replace-plugin', {
     replacements: [{
       files:  ['CHANGELOG.md'],
-      from: '${env.CI_PROJECT_URL}',
+      from: `${process.env.CI_PROJECT_URL}`,
       to: `${homepage.replace('#readme', '')}`,
     }],
   },
