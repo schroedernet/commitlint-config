@@ -3,6 +3,7 @@
 Opinionated configuration for [commitlint](https://commitlint.config.js)
 
 - [Usage](#usage)
+- [Overview](#overview)
 - [License](#license)
 
 
@@ -12,6 +13,16 @@ Opinionated configuration for [commitlint](https://commitlint.config.js)
    - `yarn add -D @schroedernet/commitlint-config`
 2. Add to `extends` array in `commitlint.config.js`
    - `{extends: ['@schroedernet/commitlint-config']}`
+
+
+## Overview
+
+This configuration is very similar to
+[`@commitlint/config-conventional`](https://www.npmjs.com/package/@commitlint/config-conventional),
+with the following exceptions:
+
+- Subject must be sentence-case
+- Scope is required
 
 
 ## License
