@@ -25,12 +25,12 @@ lint:
 pack:
   artifacts:
     paths:
-      - 'schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz'
+      - '${CI_PROJECT_PATH_SLUG}-git-${CI_COMMIT_SHA}.tgz'
 
   needs: []
 
   script:
-    - 'yarn pack --filename "schroedernet-commitlint-config-git-${CI_COMMIT_SHA}.tgz"'
+    - 'yarn pack --filename "${CI_PROJECT_PATH_SLUG}-git-${CI_COMMIT_SHA}.tgz"'
 
   stage: 'pack'
 
@@ -44,7 +44,7 @@ release:
 
   script:
     - 'echo "unsafe-perm = true" >> .npmrc'
-    - 'yarn run semantic-release --repository-url "${CI_PROJECT_URL}.git"'
+    - 'yarn run semantic-release --repository-url "${CI_REPOSITORY_URL}"'
 
   stage: 'release'
 
