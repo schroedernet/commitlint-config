@@ -1,6 +1,6 @@
 # Schroedernet commitlint configuration <!-- omit in toc -->
 
-Opinionated configuration for [commitlint](https://commitlint.config.js)
+Opinionated configuration for [commitlint](https://commitlint.js.org)
 
 - [Usage](#usage)
 - [Overview](#overview)
