@@ -1,6 +1,5 @@
 default:
   before_script:
-    - 'env'
     - 'yarn install --cache-folder .yarn-cache --frozen-lockfile --prefer-offline'
 
   cache:
