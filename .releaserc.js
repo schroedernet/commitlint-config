@@ -66,7 +66,7 @@ if (process.env.GITLAB_CI !== undefined) {
   ])
 } else if (process.env.GITHUB_ACTIONS !== undefined) {
   plugins.push([
-    '@semnatic-release/github',
+    '@semantic-release/github',
     {},
   ])
 }
