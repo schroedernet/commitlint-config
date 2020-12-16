@@ -64,7 +64,7 @@ jobs:
       - env:
           GH_TOKEN: '${{ secrets.GH_TOKEN }}'
         name: 'Semantic release'
-        run: 'yarn run semantic-release'
+        run: 'yarn run semantic-release --repository-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"'
 
   test:
     name: 'Test'
