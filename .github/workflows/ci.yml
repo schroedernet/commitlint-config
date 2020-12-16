@@ -61,7 +61,9 @@ jobs:
       - name: 'Install dependencies'
         run: 'yarn install --frozen-lockfile --prefer-offline'
 
-      - name: 'Semantic release'
+      - env:
+          GH_TOKEN: '${{ secrets.GH_TOKEN }}'
+        name: 'Semantic release'
         run: 'yarn run semantic-release'
 
   test:
