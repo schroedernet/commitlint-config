@@ -14,6 +14,9 @@ default:
   image: 'node:latest'
 
 lint:
+  except:
+    - 'schedules'
+
   needs: []
 
   script:
@@ -21,10 +24,33 @@ lint:
 
   stage: 'lint'
 
+mirror:
+  only:
+    refs:
+      - 'schedules'
+    variables:
+      - '$CANONICAL_PROJECT_URL'
+      - '$MIRROR_USER'
+      - '$MIRROR_TOKEN'
+
+  script:
+    - 'cd /tmp'
+    - 'git clone "${CANONICAL_PROJECT_URL}.git"'
+    - 'cd "${CI_PROJECT_NAME}"'
+    - 'git remote add mirror "https://${MIRROR_USER}:${MIRROR_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"'
+    - 'git fetch --all'
+    - 'git push --all mirror'
+    - 'git push --tags mirror'
+
+  stage: 'mirror'
+
 pack:
   artifacts:
     paths:
       - '${CI_PROJECT_PATH_SLUG}-git-${CI_COMMIT_SHA}.tgz'
+
+  except:
+    - 'schedules'
 
   needs: []
 
@@ -34,6 +60,9 @@ pack:
   stage: 'pack'
 
 release:
+  except:
+    - 'schedules'
+
   only:
     - 'alpha'
     - 'beta'
@@ -52,6 +81,7 @@ stages:
   - 'test'
   - 'pack'
   - 'release'
+  - 'mirror'
 
 test:
   artifacts:
@@ -62,6 +92,9 @@ test:
     when: 'always'
 
   coverage: '/All files.*\s+(\d+)\s+\|.*$/'
+
+  except:
+    - 'schedules'
 
   needs: []
 
