@@ -9,7 +9,9 @@ Opinionated configuration for [commitlint](https://commitlint.js.org)
 
 ## Usage
 
-1. Install as development dependency
+1. Install
+   [`@schroedernet/commitlint-config`](https://www.npmjs.com/package/@schroedernet/commitlint-config)
+   as development dependency
    - `yarn add -D @schroedernet/commitlint-config`
 2. Add to `extends` array in `commitlint.config.js`
    - `{extends: ['@schroedernet/commitlint-config']}`
