@@ -1,5 +1,12 @@
 # Changelog
 
+# [1.2.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.1.0...v1.2.0) (2020-12-18)
+
+
+### Features
+
+* **config:** Add 'github' to scopes ([7193e20](https://gitlab.com/schroedernet/commitlint-config/commit/7193e208b5aceddbacb71a41f76dd725f540dfb9))
+
 # [1.1.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.0.0...v1.1.0) (2020-12-18)
 
 
