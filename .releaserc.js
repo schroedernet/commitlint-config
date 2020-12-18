@@ -52,7 +52,7 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
 
   plugins.push([
     '@semantic-release/git', {
-      message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}',
+      message: 'chore(release): ${nextRelease.version}',
     },
   ])
 }
