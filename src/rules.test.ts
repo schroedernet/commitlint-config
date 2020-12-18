@@ -78,6 +78,15 @@ class TestCase {
   }
 }
 
+const strings = {
+  errors: {
+    scopeEnum: {
+      message: 'scope must be one of [contrib, deps, gitlab, license, lint, package]',
+      name: 'scope-enum',
+    },
+  },
+}
+
 const testCases: TestCase[] = [
   new TestCase({
     rule: 'body-case',
@@ -350,8 +359,8 @@ const testCases: TestCase[] = [
         message: 'scope must be lower-case',
       }),
       new LintError({
-        name: 'scope-enum',
-        message: 'scope must be one of [contrib, deps, license, lint, package]'
+        name: strings.errors.scopeEnum.name,
+        message: strings.errors.scopeEnum.message,
       }),
     ],
   }),
@@ -386,8 +395,8 @@ const testCases: TestCase[] = [
     valid: false,
     errors: [
       new LintError({
-        name: 'scope-enum',
-        message: 'scope must be one of [contrib, deps, license, lint, package]',
+        name: strings.errors.scopeEnum.name,
+        message: strings.errors.scopeEnum.message,
       }),
     ],
   }),
