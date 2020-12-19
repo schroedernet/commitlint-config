@@ -8,12 +8,15 @@
 
 const {execFileSync} = require('child_process')
 
-const {homepage} = require('./package.json')
+const {homepage, name} = require('./package.json')
 
 
 const plugins = [[
   '@semantic-release/commit-analyzer', {
     preset: 'conventionalcommits',
+    presetConfig: {
+      releaseCommitMessageFormat: `chore(release): Release ${name} {{currentTag}}`,
+    },
   },
 ], [
   '@semantic-release/release-notes-generator', {
@@ -54,7 +57,7 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
 
   plugins.push([
     '@semantic-release/git', {
-      message: 'chore(release): ${nextRelease.version}',
+      message: `chore(release): Release ${name} v\${nextRelease.version}`,
     },
   ])
 }
