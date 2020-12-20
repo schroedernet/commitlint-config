@@ -11,6 +11,16 @@ const {execFileSync} = require('child_process')
 const {homepage, name} = require('./package.json')
 
 
+const {
+  CI_PROJECT_URL,
+  GIT_GPG_KEY_ID,
+  GIT_GPG_KEYS,
+  GITHUB_ACTIONS,
+  GITLAB_CI,
+  NPM_TOKEN,
+} = process.env
+
+
 const plugins = [[
   '@semantic-release/commit-analyzer', {
     preset: 'conventionalcommits',
@@ -30,29 +40,29 @@ const plugins = [[
   '@google/semantic-release-replace-plugin', {
     replacements: [{
       files:  ['CHANGELOG.md'],
-      from: `${process.env.CI_PROJECT_URL}`,
+      from: `${CI_PROJECT_URL}`,
       to: `${homepage.replace('#readme', '')}`,
     }],
   },
 ]]
 
-if (process.env.NPM_TOKEN !== undefined) {
+if (NPM_TOKEN !== undefined) {
   plugins.push([
     '@semantic-release/npm',
   ])
 }
 
-if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== undefined) {
+if (GIT_GPG_KEY_ID !== undefined && GIT_GPG_KEYS !== undefined) {
   // This may or may not be the best place for this, but as long as the config
   // file allows arbitrary code execution, it's being taken advatange of to do a
   // little prep work.
 
   execFileSync('gpg', ['--import'], {
-    input: Buffer.from(process.env.GIT_GPG_KEYS, 'base64').toString('ascii'),
+    input: Buffer.from(GIT_GPG_KEYS, 'base64').toString('ascii'),
   })
 
   execFileSync('git', ['config', 'commit.gpgsign', 'true'])
-  execFileSync('git', ['config', 'user.signingkey', process.env.GIT_GPG_KEY_ID])
+  execFileSync('git', ['config', 'user.signingkey', GIT_GPG_KEY_ID])
 
   plugins.push([
     '@semantic-release/git', {
@@ -62,11 +72,11 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
   ])
 }
 
-if (process.env.GITLAB_CI !== undefined) {
+if (GITLAB_CI !== undefined) {
   plugins.push([
     '@semantic-release/gitlab',
   ])
-} else if (process.env.GITHUB_ACTIONS !== undefined) {
+} else if (GITHUB_ACTIONS !== undefined) {
   plugins.push([
     '@semantic-release/github',
   ])
