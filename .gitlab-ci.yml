@@ -25,6 +25,9 @@ lint:
   stage: 'lint'
 
 mirror:
+  before_script: []
+  cache: {}
+
   only:
     refs:
       - 'schedules'
