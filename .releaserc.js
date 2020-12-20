@@ -39,7 +39,6 @@ const plugins = [[
 if (process.env.NPM_TOKEN !== undefined) {
   plugins.push([
     '@semantic-release/npm',
-    {},
   ])
 }
 
@@ -57,6 +56,7 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
 
   plugins.push([
     '@semantic-release/git', {
+      // @ts-ignore
       message: `chore(release): Release ${name} v\${nextRelease.version}`,
     },
   ])
@@ -65,12 +65,10 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
 if (process.env.GITLAB_CI !== undefined) {
   plugins.push([
     '@semantic-release/gitlab',
-    {},
   ])
 } else if (process.env.GITHUB_ACTIONS !== undefined) {
   plugins.push([
     '@semantic-release/github',
-    {},
   ])
 }
 
