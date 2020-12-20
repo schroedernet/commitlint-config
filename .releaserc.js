@@ -65,9 +65,7 @@ if (process.env.GIT_GPG_KEY_ID !== undefined && process.env.GIT_GPG_KEYS !== und
 if (process.env.GITLAB_CI !== undefined) {
   plugins.push([
     '@semantic-release/gitlab',
-    {
-      gitlabUrl: 'https://gitlab.schroedernet.software',
-    },
+    {},
   ])
 } else if (process.env.GITHUB_ACTIONS !== undefined) {
   plugins.push([
