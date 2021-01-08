@@ -81,7 +81,7 @@ class TestCase {
 const strings = {
   errors: {
     scopeEnum: {
-      message: 'scope must be one of [contrib, deps, github, gitlab, license, lint, package]',
+      message: 'scope must be one of [contrib, deps, github, gitlab, license, lint, package, readme]',
       name: 'scope-enum',
     },
   },
@@ -385,7 +385,7 @@ const testCases: TestCase[] = [
   new TestCase({
     rule: 'scope-enum',
     description: 'Scope in whitelist is valid',
-    message: 'build(lint): Add awesome linting',
+    message: 'docs(readme): Add readme',
     valid: true,
   }),
   new TestCase({

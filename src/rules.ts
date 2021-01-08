@@ -21,7 +21,7 @@ export const rules: RulesConfig = {
   'scope-empty':            [2, 'never'                                       ],
   'scope-enum':             [2, 'always', ['contrib', 'deps', 'github',
                                            'gitlab', 'license', 'lint',
-                                           'package']                         ],
+                                           'package', 'readme']               ],
   'scope-max-length':       [2, 'always', Infinity                            ],
   'scope-min-length':       [2, 'always', 0                                   ],
   'signed-off-by':          [0                                                ],
