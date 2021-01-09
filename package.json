@@ -1,6 +1,6 @@
 {
   "name": "@schroedernet/commitlint-config",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Opinionated configuration for commitlint",
   "main": "dist/index.js",
   "repository": {
@@ -54,7 +54,6 @@
     "lint:tsc": "run-p lint:tsc:*",
     "lint:tsc:main": "tsc --noEmit",
     "lint:tsc:releaserc": "tsc --allowJs --noEmit --resolveJsonModule .releaserc.js",
-
     "prelint:ajv": "mkdir -p tmp/lint/schemas && mkdir -p tmp/lint/work && rm -rf tmp/lint/work/*",
     "prelint:ajv:commitlintrc": "test -f tmp/lint/schemas/commitlintrc.json || wget -O tmp/lint/schemas/commitlintrc.json https://json.schemastore.org/commitlintrc",
     "prelint:ajv:gitlab-ci": "test -f tmp/lint/schemas/gitlab-ci.json || wget -O tmp/lint/schemas/gitlab-ci.json https://json.schemastore.org/gitlab-ci",

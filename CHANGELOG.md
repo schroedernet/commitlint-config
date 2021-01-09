@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.2.0...v1.3.0) (2021-01-09)
+
+
+### Features
+
+* **config:** Add readme to scopes ([469f735](https://gitlab.com/schroedernet/commitlint-config/commit/469f735b80a1307e8a5896940157234ad34d0582))
+
 # [1.2.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.1.0...v1.2.0) (2020-12-18)
 
 
