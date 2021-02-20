@@ -81,7 +81,7 @@ class TestCase {
 const strings = {
   errors: {
     scopeEnum: {
-      message: 'scope must be one of [contrib, deps, github, gitlab, license, lint, package, readme]',
+      message: 'scope must be one of [contrib, deps, github, gitlab, license, lint, package, readme, release]',
       name: 'scope-enum',
     },
   },
