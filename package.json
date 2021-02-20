@@ -1,6 +1,6 @@
 {
   "name": "@schroedernet/commitlint-config",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Opinionated configuration for commitlint",
   "main": "dist/index.js",
   "repository": {

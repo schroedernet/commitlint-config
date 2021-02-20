@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.3.0...v1.4.0) (2021-02-20)
+
+
+### Features
+
+* **config:** Add release to scopes ([70a5f62](https://gitlab.com/schroedernet/commitlint-config/commit/70a5f62f5c50c2009dce467250154242100a6e08))
+
 ## [1.3.0](https://gitlab.com/schroedernet/commitlint-config/compare/v1.2.0...v1.3.0) (2021-01-09)
 
 
